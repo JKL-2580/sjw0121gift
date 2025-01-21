@@ -1,0 +1,110 @@
+canvas {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+p {
+  margin: 0 0;
+  position: absolute;
+  font: 16px Verdana;
+  color: #eee;
+  height: 25px;
+  top: calc(100vh - 30px);
+  text-shadow: 0 0 2px white;
+}
+p a {
+  text-decoration: none;
+  color: #aaa;
+}
+span {
+  font-size: 11px;
+}
+p > a:first-of-type {
+  font-size: 20px;
+}
+body {
+  overflow: hidden;
+  -ms-overflow-style: none;
+}
+html {
+  overflow: hidden;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+.bt-1 {
+  position: fixed;
+  top: 10px;
+  left: 10px;
+  background: rgb(0, 172, 238);
+  background: linear-gradient(
+    0deg,
+    rgba(0, 172, 238, 1) 0%,
+    rgba(2, 126, 251, 1) 100%
+  );
+  width: 100px;
+  height: 50px;
+  line-height: 42px;
+  padding: 0;
+  border: none;
+  border-radius: 5px;
+  z-index: 100;
+}
+.bt-1 span {
+  position: relative;
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+.bt-1:before,
+.bt-1:after {
+  position: absolute;
+  content: "";
+  right: 0;
+  top: 0;
+  background: rgba(2, 126, 251, 1);
+  transition: all 0.3s ease;
+}
+.bt-1:before {
+  height: 0%;
+  width: 2px;
+}
+.bt-1:after {
+  width: 0%;
+  height: 2px;
+}
+.bt-1:hover {
+  background: whitesmoke;
+  box-shadow: none;
+}
+.bt-1:hover:before {
+  height: 100%;
+}
+.bt-1:hover:after {
+  width: 100%;
+}
+.bt-1 span:hover {
+  color: rgba(2, 126, 251, 1);
+}
+.bt-1 span:before,
+.bt-1 span:after {
+  position: absolute;
+  content: "";
+  left: 0;
+  bottom: 0;
+  background: rgba(2, 126, 251, 1);
+  transition: all 0.3s ease;
+}
+.bt-1 span:before {
+  width: 2px;
+  height: 0%;
+}
+.bt-1 span:after {
+  width: 0%;
+  height: 2px;
+}
+.bt-1 span:hover:before {
+  height: 100%;
+}
+.bt-1 span:hover:after {
+  width: 100%;
+}

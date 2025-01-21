@@ -1,0 +1,104 @@
+<html>
+  <head>
+    <link rel="stylesheet" type="text/css" href="./web/index.css" />
+    <script src="./web/myscript.js"></script>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>生日礼物</title>
+  </head>
+  <body background="./image/bgp.webp">
+
+    <div class="main">
+      <div>
+        <h1>生日礼物</h1>
+      </div>
+      <hr />
+      <div>
+        <table>
+          <tr>
+            <td>
+              <a
+                class="playLink"
+                href="web/greet.html"
+                target="_blank"
+                onclick="play()"
+                >生日祝福</a
+              >
+            </td>
+            <td>
+              <a
+                class="playLink"
+                href="web/aboutyou.html"
+                target="_blank"
+                onclick="play()"
+                >与你相关</a
+              >
+            </td>
+            <td>
+              <a
+                class="playLink"
+                href="web/guides.html"
+                target="_blank"
+                onclick="play()"
+                >网页导航</a
+              >
+            </td>
+            <td>
+              <a
+                class="playLink"
+                href="web/entertainment.html"
+                target="_blank"
+                onclick="play()"
+                >娱乐界面</a
+            </td>
+          
+          </tr>
+        </table>
+      </div>
+      <div class="quote">
+        <p>
+          “祝你生日快乐<br />
+          宇宙很大，生活更大，也许以后还有缘相见。<br />
+          弱小和无知不是生存的障碍，傲慢才是。<br />
+        </p>
+        <p style="margin-top: 30px">
+          <del>来了，爱了，给了她一颗星星，走了。</del>”
+        </p>
+        <p style="text-align: right">
+          ——《The Three-Body Problem》by Cixin Liu
+        </p>
+        <audio id="audio" src="image/Background/starsing.mp3" preload="auto">
+          您的浏览器不支持音频元素。
+        </audio>
+      </div>
+    </div>
+
+    <div class="foot">
+      <p>
+        Copyright@李俊雄&nbsp;&nbsp;Referenced by
+        Zhoushiyao&nbsp;&nbsp;
+      </p>
+    </div>
+    <!-- <script>
+            //原点击播放音乐的代码
+            // 获取链接和音频元素
+            const playLinks = document.querySelectorAll('.playLink');
+            const audio = document.getElementById('audio');
+
+            // 遍历所有链接，监听点击事件
+            playLinks.forEach(link => {
+            link.addEventListener('click', function(event) {
+                // 阻止默认行为（防止页面跳转）
+
+                // 播放音频
+                audio.play().then(() => {
+                    console.log('音频开始播放');
+                }).catch((error) => {
+                    console.log('播放音频时发生错误:', error);
+                });
+            });
+            });
+
+       </script> -->
+  </body>
+</html>

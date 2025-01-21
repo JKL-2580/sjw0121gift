@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" type="text/css" href="style.css" />
+    <title>娱乐界面</title>
+  </head>
+  <body>
+    <div class="bgi">
+      <div class="head">
+        <ul style="float: left">
+          <li><a class="guide" href="../index.html"><-| 返回主页</a></li>
+        </ul>
+        <ul>
+          <li>
+            <a
+              href=""
+              style="background-color: rgba(0, 0, 0, 0.5); color: white"
+              >娱乐界面</a
+            >
+          </li>
+
+          <li>
+            <a href="guides.html">网页导航</a>
+          </li>
+          <li><a href="aboutyou.html">与你相关</a></li>
+        </ul>
+      </div>
+      <div class="body">
+        <h1>欢迎来到数字炸弹游戏！</h1>
+        <p>请选择一个数字，猜测炸弹藏在哪个数字中。</p>
+
+        <div class="game-container">
+          <label for="guess">请输入你猜测的数字 (1 到 100)：</label>
+          <input type="number" id="guess" min="1" max="100" />
+          <button onclick="checkGuess()">猜测</button>
+        </div>
+
+        <div id="message"></div>
+        <div id="attempts"></div>
+
+        <script>
+          // 生成1到100之间的随机数作为炸弹的数字
+          const bombNumber = Math.floor(Math.random() * 100) + 1;
+          let attemptsLeft = 10; // 最大猜测次数
+
+          // 检查用户输入的猜测
+          function checkGuess() {
+            const guess = parseInt(document.getElementById("guess").value);
+            const messageDiv = document.getElementById("message");
+            const attemptsDiv = document.getElementById("attempts");
+
+            if (isNaN(guess) || guess < 1 || guess > 100) {
+              messageDiv.innerHTML = "请输入1到100之间的数字！";
+              return;
+            }
+
+            attemptsLeft--;
+
+            if (guess === bombNumber) {
+              messageDiv.innerHTML = "恭喜！你找到了炸弹！游戏结束！";
+              document.body.style.backgroundColor = "green"; // 成功时变绿
+            } else if (attemptsLeft <= 0) {
+              messageDiv.innerHTML = `游戏结束！你没有找到炸弹。炸弹数字是：${bombNumber}`;
+              document.body.style.backgroundColor = "red"; // 失败时变红
+            } else {
+              messageDiv.innerHTML = `错误！炸弹不在数字 ${guess} 位置。剩余尝试次数：${attemptsLeft}`;
+            }
+
+            attemptsDiv.innerHTML = `剩余尝试次数：${attemptsLeft}`;
+          }
+        </script>
+      </div>
+    </div>
+  </body>
+</html>
